@@ -1,6 +1,6 @@
 # Accredited Interchange — website
 
-Source for accreditedinterchange.com. The site builder (currently Webflow; works the same in GHL) holds one small embed per page, and everything else loads from this repo through GitHub Pages. Make changes here, not in the builder.
+Source for accreditedinterchange.com. The site is built in GoHighLevel: in the Accredited Interchange sub-account, under Sites → Websites → **Accredited Interchange**. Each page holds one Custom Code element, and everything else loads from this repo through GitHub Pages. Make changes here, not in GHL.
 
 ## How it works
 
@@ -15,16 +15,18 @@ Each page's custom-code embed contains only:
 
 ## Pages
 
-| Live URL | `data-page` | File |
-|---|---|---|
-| `/` | `home` | `pages/home.html` |
-| `/contact-us` | `contact` | `pages/contact.html` (includes GHL form GTv5oyghEW1j6kvJYelQ) |
-| `/message-received` | `message-received` | `pages/message-received.html` (includes GHL calendar 0NjpVBFobathv2dyZnxF) |
-| `/specialty-peptide-payment-processing` | `peptides` | `pages/peptides.html` |
-| `/privacy-policy` | `privacy` | `pages/privacy.html` |
-| `/terms-of-service` | `terms` | `pages/terms.html` |
+| Live URL | `data-page` | File | GHL page ID |
+|---|---|---|---|
+| `/` | `home` | `pages/home.html` | zppNaKK0HX30CsqpM4su |
+| `/contact-us` | `contact` | `pages/contact.html` (includes GHL form GTv5oyghEW1j6kvJYelQ) | bF9LBsEUViON4CdCaMFY |
+| `/message-received` | `message-received` | `pages/message-received.html` (includes GHL calendar 0NjpVBFobathv2dyZnxF) | B2GyAsZhIE8XAFqgivvW |
+| `/specialty-peptide-payment-processing` | `peptides` | `pages/peptides.html` | zy9z9vOPkUSzCpMmAotz |
+| `/privacy-policy` | `privacy` | `pages/privacy.html` | GsChR8xUe3enzd04vWPI |
+| `/terms-of-service` | `terms` | `pages/terms.html` | HTWoRa8GEP0swGWxEKCf |
 
-Set page titles and meta descriptions in the builder's page settings, not in these files.
+Page titles and meta descriptions are set in GHL (builder → SEO & AI search optimization), not in these files. The loader also strips GHL's section/row padding so pages run edge to edge.
+
+Preview a GHL page before the domain points to it: `https://sites.leadconnectorhq.com/preview/<GHL page ID>?notrack=true`
 
 ## Making a change
 
@@ -37,4 +39,4 @@ Set page titles and meta descriptions in the builder's page settings, not in the
 
 ## Assets
 
-Logos are in `assets/`. The pages currently load the logo from the Webflow CDN. It can be switched to `assets/ai-logo-mark.png` if the site moves off Webflow.
+Logos are in `assets/`. The pages still load the logo from the Webflow CDN (cdn.prod.website-files.com). Switch them to `assets/ai-logo-mark.png` before the Webflow site is cancelled.
