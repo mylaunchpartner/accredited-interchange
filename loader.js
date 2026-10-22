@@ -62,14 +62,57 @@
     }, Promise.resolve()).then(function () { setTimeout(restore, 50); }, restore);
   }
 
-  fetch(BASE + 'pages/' + page + '.html?' + BUST)
-    .then(function (r) {
-      if (!r.ok) throw new Error('pages/' + page + '.html → ' + r.status);
+  function get(p) {
+    return fetch(BASE + p + '?' + BUST).then(function (r) {
+      if (!r.ok) throw new Error(p + ' → ' + r.status);
       return r.text();
-    })
-    .then(function (html) {
-      mount.innerHTML = html;
+    });
+  }
+
+  // Shared header/footer behaviour (one copy for every page)
+  function bindShell() {
+    var path = location.pathname.replace(/\/+$/, '') || '/';
+    var isHome = path === '/' || path === '/home';
+    // On the home page, keep section links in-page so they scroll instead of reloading
+    if (isHome) {
+      mount.querySelectorAll('.ai-shell a[href^="/#"]').forEach(function (a) {
+        a.setAttribute('href', a.getAttribute('href').slice(1));
+      });
+    }
+    mount.querySelectorAll('.ai-shell [data-path]').forEach(function (a) {
+      if (path.indexOf(a.getAttribute('data-path')) === 0) { a.classList.add('is-current'); a.setAttribute('aria-current', 'page'); }
+    });
+    var dd = document.getElementById('aiSpecDropdown'), btn = document.getElementById('aiSpecDropdownBtn');
+    if (dd && btn) {
+      btn.addEventListener('click', function (e) { e.stopPropagation(); btn.setAttribute('aria-expanded', dd.classList.toggle('open')); });
+      document.addEventListener('click', function () { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+      dd.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
+    var tog = document.getElementById('aiNavToggle'), menu = document.getElementById('aiMobileMenu'), x = document.getElementById('aiMobileClose');
+    if (tog && menu) {
+      var close = function () { menu.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+      tog.addEventListener('click', function () { menu.classList.add('open'); tog.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; });
+      if (x) x.addEventListener('click', close);
+      menu.addEventListener('click', function (e) { if (e.target === menu) close(); });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    }
+  }
+
+  Promise.all([
+    get('pages/' + page + '.html'),
+    get('partials/header.html'),
+    get('partials/footer.html'),
+    get('partials/nap.html'),
+    get('partials/shell.css')
+  ])
+    .then(function (p) {
+      var html = p[0]
+        .replace('<!--ai:header-->', p[1])
+        .replace('<!--ai:footer-->', p[2]);
+      html = html.split('<!--ai:nap-->').join(p[3]);
+      mount.innerHTML = '<style>' + p[4] + '</style>' + html;
       mount.style.minHeight = '';
+      bindShell();
       return runScripts(mount);
     })
     .then(function () {

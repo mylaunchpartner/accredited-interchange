@@ -378,44 +378,21 @@
     .pr-cta-inner,.ins-cta-inner{flex-direction:column;align-items:flex-start}
     .cta-phone-btn{font-size:16.5px;padding:16px 28px}
   }
+
+  /* MEET THE OWNER */
+  .owner-band{padding:72px 0;background:var(--paper);border-bottom:1px solid var(--border)}
+  .owner-card{display:grid;grid-template-columns:190px 1fr;gap:44px;align-items:center;max-width:960px;margin:0 auto}
+  .owner-photo{width:190px;height:190px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--indigo),var(--indigo-dark));display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-md);border:4px solid var(--white);position:relative}
+  .owner-photo img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+  .owner-photo .initials{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:54px;font-weight:700;color:var(--white);letter-spacing:.02em}
+  .owner-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.6vw,32px);font-weight:700;color:var(--ink);line-height:1.15}
+  .owner-title{font-size:14px;font-weight:600;color:var(--indigo-mid);margin:6px 0 16px}
+  .owner-copy p{font-size:16px;line-height:1.7;color:var(--body-c);margin-bottom:12px;max-width:640px}
+  .owner-copy .btn{margin-top:10px}
+  @media(max-width:720px){.owner-card{grid-template-columns:1fr;text-align:center;gap:24px}.owner-photo{margin:0 auto;width:150px;height:150px}.owner-copy p{margin-left:auto;margin-right:auto}}
 </style>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo">
-      <div class="logo-mark">
-        <svg viewBox="30 25 415 170" role="img" aria-label="Accredited Interchange logo">
-          <circle cx="195" cy="110" r="75" fill="none" stroke="#0B1F44" stroke-width="3.5"/>
-          <path d="M35 90.5 L35 93.5 C 70 82, 95 75, 130 72.5 C 155 71, 180 100, 195 141.5 C 205 118, 225 90, 255 87 C 310 80, 360 100, 405 143.5 L405 146.5 C 375 109, 320 96, 255 97 C 230 99, 208 128, 195 154.5 C 182 108, 158 84, 130 83.5 C 100 83, 65 85.5, 35 90.5 Z" fill="#0B1F44"/>
-        </svg>
-      </div>
-      <div class="logo-text">Accredited Interchange</div>
-    </a>
-    <nav class="service-tabs" aria-label="Service areas">
-      <a href="#payments" class="service-tab tab-pay active">Payments</a>
-      <a href="#payroll" class="service-tab tab-pr">Payroll</a>
-      <a href="#insurance" class="service-tab tab-ins">Insurance</a>
-      <div class="tab-dropdown" id="specDropdown">
-        <button class="tab-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="specDropdownBtn">
-          Specialty Processing
-          <svg class="arr" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg>
-        </button>
-        <div class="tab-dropdown-menu" role="menu">
-          <a href="/specialty-peptide-payment-processing" class="tab-dropdown-item" role="menuitem">
-            <span class="item-dot"></span>Peptides
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div class="header-actions">
-      <a href="https://accreditedinterchangeportal.com/login" class="header-cta">Merchant Login</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="16" y2="5"/><line x1="2" y1="9" x2="16" y2="9"/><line x1="2" y1="13" x2="16" y2="13"/></svg></button>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu"><div class="mobile-panel"><button class="mob-x" id="mobileClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg></button><nav class="mob-nav"><a href="#payments">Payments</a><a href="#payroll">Payroll</a><a href="#insurance">Insurance</a><a href="/specialty-peptide-payment-processing">Peptides</a><div class="mob-hr"></div><a href="/contact-us">Contact</a></nav><a href="https://accreditedinterchangeportal.com/login" class="mob-cta" target="_blank" rel="noopener">Merchant Login</a></div></div>
+<!--ai:header-->
 
 <!-- HERO -->
 <section class="hero">
@@ -424,7 +401,7 @@
     <div class="hero-inner">
       <div class="eyebrow"><span class="dot"></span>Complete Business Financial Services</div>
       <h1>One trusted name.<br><span class="grad-pay">Three essential services.</span></h1>
-      <p class="hero-sub">Payment processing, payroll, and business insurance — built to work together under the Accredited Interchange brand. One relationship, one team, one point of contact.</p>
+      <p class="hero-sub">Payment processing, payroll, and business insurance — built to work together under the Accredited Interchange (Arizona) brand. One relationship, one team, one point of contact.</p>
       <div class="hero-services">
         <div class="hero-svc svc-pay reveal">
           <div class="hero-svc-icon icon-pay">
@@ -473,6 +450,27 @@
     </div>
   </div>
 </div>
+
+
+<!-- MEET THE OWNER -->
+<section class="owner-band" id="owner">
+  <div class="container">
+    <div class="owner-card reveal">
+      <div class="owner-photo">
+        <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/samantha-martinez-accredited-interchange.jpg" alt="Samantha Martinez, owner of Accredited Interchange" width="190" height="190" loading="lazy" onerror="this.remove()">
+        <span class="initials" aria-hidden="true">SM</span>
+      </div>
+      <div class="owner-copy">
+        <div class="eyebrow-label" style="color:var(--indigo-mid);background:var(--indigo-tint)">Meet the owner</div>
+        <div class="owner-name">Samantha Martinez</div>
+        <div class="owner-title">President &amp; CEO, Accredited Interchange (Arizona)</div>
+        <p>Accredited Interchange (Arizona) is owned and run by Samantha Martinez. She leads the company from Arizona and works directly with the merchants and partners we serve.</p>
+        <p>Her standard is simple: every client should understand exactly what they pay, and should always reach a real person when they call.</p>
+        <a href="/about" class="btn btn-pay">Read Samantha's story →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PAYMENTS -->
 <div id="payments"></div>
@@ -941,70 +939,13 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           Contact Us
         </a>
-        <span class="cta-fineprint">Mon – Fri, 8am – 6pm · U.S.-based · No sales pressure</span>
+        <span class="cta-fineprint">24/7 U.S.-based support · No sales pressure</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" class="logo" style="text-decoration:none;">
-          <div class="logo-mark">
-            <svg viewBox="30 25 415 170" role="img" aria-label="Accredited Interchange logo">
-              <circle cx="195" cy="110" r="75" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
-              <path d="M35 90.5 L35 93.5 C 70 82, 95 75, 130 72.5 C 155 71, 180 100, 195 141.5 C 205 118, 225 90, 255 87 C 310 80, 360 100, 405 143.5 L405 146.5 C 375 109, 320 96, 255 97 C 230 99, 208 128, 195 154.5 C 182 108, 158 84, 130 83.5 C 100 83, 65 85.5, 35 90.5 Z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <div class="logo-text">Accredited Interchange</div>
-        </a>
-        <p>Payment processing, payroll, and business insurance for small and midsize businesses across the United States.<br><br>2375 E Camelback Rd #600<br>Phoenix, AZ 85016</p>
-      </div>
-      <div class="footer-col col-pay">
-        <h5>Payments</h5>
-        <ul>
-          <li><a href="#payments">In-Person Processing</a></li>
-          <li><a href="#payments">Ecommerce &amp; Gateways</a></li>
-          <li><a href="#payments">Virtual Terminal</a></li>
-          <li><a href="#payments">Recurring Billing</a></li>
-          <li><a href="#payments">Gift &amp; Loyalty</a></li>
-          <li><a href="#calculator">Savings Calculator</a></li>
-        </ul>
-      </div>
-      <div class="footer-col col-pr">
-        <h5>Payroll</h5>
-        <ul>
-          <li><a href="#payroll">Automated Payroll</a></li>
-          <li><a href="#payroll">Tax Filing</a></li>
-          <li><a href="#payroll">Direct Deposit</a></li>
-          <li><a href="#payroll">Employee Portal</a></li>
-          <li><a href="#payroll">Year-End Forms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col col-ins">
-        <h5>Insurance</h5>
-        <ul>
-          <li><a href="#insurance">General Liability</a></li>
-          <li><a href="#insurance">Workers' Comp</a></li>
-          <li><a href="#insurance">Commercial Auto</a></li>
-          <li><a href="#insurance">Professional Liability</a></li>
-          <li><a href="#insurance">Group Benefits</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Accredited Interchange. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-        <a href="/contact-us">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!--ai:footer-->
 
 <script>
 window.addEventListener('load', function() {

@@ -23,10 +23,24 @@ Each page's custom-code embed contains only:
 | `/specialty-peptide-payment-processing` | `peptides` | `pages/peptides.html` | zy9z9vOPkUSzCpMmAotz |
 | `/privacy-policy` | `privacy` | `pages/privacy.html` | GsChR8xUe3enzd04vWPI |
 | `/terms-of-service` | `terms` | `pages/terms.html` | HTWoRa8GEP0swGWxEKCf |
+| `/about` | `about` | `pages/about.html` | (new) |
+| `/ownership` | `ownership` | `pages/ownership.html` | (new) |
+| `/samantha-martinez` | `samantha-martinez` | `pages/samantha-martinez.html` | (new) |
 
 Page titles and meta descriptions are set in GHL (builder → SEO & AI search optimization), not in these files. The loader also strips GHL's section/row padding so pages run edge to edge.
 
 Preview a GHL page before the domain points to it: `https://sites.leadconnectorhq.com/preview/<GHL page ID>?notrack=true`
+
+## Shared parts
+
+The header, footer and contact block are shared across every page. Edit them once here:
+
+- `partials/header.html`: logo, main menu, mobile menu
+- `partials/footer.html`: footer columns and legal line
+- `partials/nap.html`: company name, legal name, address, phone and email. The loader inserts it wherever a page has `<!--ai:nap-->` (footer, contact, about, ownership), so it matches character for character everywhere.
+- `partials/shell.css`: styles for the header and footer
+
+Pages mark where these go with `<!--ai:header-->` and `<!--ai:footer-->`.
 
 ## Making a change
 
@@ -39,4 +53,4 @@ Preview a GHL page before the domain points to it: `https://sites.leadconnectorh
 
 ## Assets
 
-Logos are in `assets/`. Pages load the logo from `assets/ai-logo-mark.png` on GitHub Pages, so nothing depends on Webflow.
+Logos are in `assets/`. Add Samantha's headshot as `assets/samantha-martinez-accredited-interchange.jpg`; the home, about and author pages show it automatically, and show "SM" initials until it exists. Pages load the logo from `assets/ai-logo-mark.png` on GitHub Pages, so nothing depends on Webflow.
