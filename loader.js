@@ -17,6 +17,21 @@
 
   mount.style.minHeight = '100vh';
 
+  // GHL / Webflow wrap custom-code blocks in padded, width-capped containers.
+  // Flatten every wrapper between the mount and <body> so the site runs edge to edge.
+  (function flattenWrappers() {
+    var css = document.createElement('style');
+    css.textContent =
+      '.ai-flat{padding:0!important;margin:0!important;max-width:none!important;width:100%!important;border:0!important;background:transparent!important;box-shadow:none!important}' +
+      'body{margin:0}';
+    document.head.appendChild(css);
+    var el = mount.parentElement;
+    while (el && el !== document.body && el !== document.documentElement) {
+      el.classList.add('ai-flat');
+      el = el.parentElement;
+    }
+  })();
+
   function runScripts(root) {
     var list = Array.prototype.slice.call(root.querySelectorAll('script'));
     // Page scripts were written for a fresh page load. Here the page has
