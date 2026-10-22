@@ -39,4 +39,4 @@ Preview a GHL page before the domain points to it: `https://sites.leadconnectorh
 
 ## Assets
 
-Logos are in `assets/`. The pages still load the logo from the Webflow CDN (cdn.prod.website-files.com). Switch them to `assets/ai-logo-mark.png` before the Webflow site is cancelled.
+Logos are in `assets/`. Pages load the logo from `assets/ai-logo-mark.png` on GitHub Pages, so nothing depends on Webflow.
