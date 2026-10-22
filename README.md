@@ -11,7 +11,7 @@ Each page's custom-code embed contains only:
 <script src="https://mylaunchpartner.github.io/accredited-interchange/loader.js"></script>
 ```
 
-`loader.js` fetches `pages/<data-page>.html`, puts it on the page, and runs its scripts (nav, savings calculator, FAQ, the GHL form and the GHL calendar).
+`loader.js` is a tiny stub that loads `core.js` with a cache key that changes every minute. `core.js` fetches `pages/<data-page>.html`, puts it on the page, and runs its scripts (nav, savings calculator, FAQ, the GHL form and the GHL calendar).
 
 ## Pages
 
