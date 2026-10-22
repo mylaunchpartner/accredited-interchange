@@ -23,9 +23,9 @@ Each page's custom-code embed contains only:
 | `/specialty-peptide-payment-processing` | `peptides` | `pages/peptides.html` | zy9z9vOPkUSzCpMmAotz |
 | `/privacy-policy` | `privacy` | `pages/privacy.html` | GsChR8xUe3enzd04vWPI |
 | `/terms-of-service` | `terms` | `pages/terms.html` | HTWoRa8GEP0swGWxEKCf |
-| `/about` | `about` | `pages/about.html` | (new) |
-| `/ownership` | `ownership` | `pages/ownership.html` | (new) |
-| `/samantha-martinez` | `samantha-martinez` | `pages/samantha-martinez.html` | (new) |
+| `/about` | `about` | `pages/about.html` | XPc0G6Mb1cL9B4fh1aRU |
+| `/ownership` | `ownership` | `pages/ownership.html` | B8rxAKoyyWim4w6CY6bI |
+| `/samantha-martinez` | `samantha-martinez` | `pages/samantha-martinez.html` | lXSXtBYotHiKEH75NPOy |
 
 Page titles and meta descriptions are set in GHL (builder → SEO & AI search optimization), not in these files. The loader also strips GHL's section/row padding so pages run edge to edge.
 
@@ -41,6 +41,14 @@ The header, footer and contact block are shared across every page. Edit them onc
 - `partials/shell.css`: styles for the header and footer
 
 Pages mark where these go with `<!--ai:header-->` and `<!--ai:footer-->`.
+
+## Structured data
+
+`seo/schema-head.html` is the Organization + Person JSON-LD. It lives in GHL under Websites → Accredited Interchange → Settings → Head tracking code. Edit it here first, then paste it into GHL.
+
+## Blog
+
+The GHL blog site "Accredited Interchange (Arizona) Blog" is at accreditedinterchange.com/blog. The author is Samantha Martinez, linking to /samantha-martinez. Categories: From the Owner, Payments Guides, Industry Guides, Payroll & Insurance, Arizona Business.
 
 ## Making a change
 
