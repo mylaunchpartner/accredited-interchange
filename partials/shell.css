@@ -23,7 +23,7 @@
 .ai-shell .header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .ai-shell .header-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--white);font-size:13px;font-weight:600;padding:10px 20px;border-radius:999px;transition:background .2s}
 .ai-shell .header-cta:hover{background:var(--indigo)}
-@media(max-width:1120px){.ai-shell .service-tabs{display:none}}
+@media(max-width:940px){.ai-shell .service-tabs{display:none}}
 .ai-shell .nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:10px;background:transparent;border:1px solid var(--border);cursor:pointer;padding:0;flex-shrink:0}
 .ai-shell .nav-toggle:hover{background:var(--paper)}
 .ai-shell .mobile-menu{display:none;position:fixed;inset:0;z-index:300;background:rgba(15,18,34,.5)}
@@ -36,7 +36,7 @@
 .ai-shell .mob-hr{height:1px;background:var(--border);margin:10px 0}
 .ai-shell .mob-cta{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);font-size:14px;font-weight:600;padding:13px 20px;border-radius:999px;text-decoration:none;margin-top:auto;transition:background .15s}
 .ai-shell .mob-cta:hover{background:var(--indigo)}
-@media(max-width:1120px){.ai-shell .nav-toggle{display:flex}}
+@media(max-width:940px){.ai-shell .nav-toggle{display:flex}}
 @media(max-width:560px){.ai-shell .header-cta{display:none}}
 .ai-shell footer{background:var(--ink);padding:60px 0 32px}
 .ai-shell .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
@@ -70,3 +70,8 @@
 .ai-shell .footer-owner{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.5)}
 .ai-shell .footer-owner a{color:rgba(175,172,255,.95);text-decoration:underline;text-underline-offset:3px}
 .ai-shell .mob-nav a.is-current{background:var(--indigo-tint);color:var(--indigo-mid)}
+.ai-shell .tab-more .tab-dropdown-btn{background:transparent;color:var(--muted)}
+.ai-shell .tab-more .tab-dropdown-btn:hover{background:transparent;color:var(--ink)}
+.ai-shell .tab-more.open .tab-dropdown-btn,.ai-shell .tab-more .tab-dropdown-btn.is-current{background:var(--indigo-tint);color:var(--indigo-mid)}
+.ai-shell .tab-more .tab-dropdown-menu{min-width:150px}
+.ai-shell .tab-dropdown-item.is-current{background:var(--indigo-tint);color:var(--indigo-mid)}

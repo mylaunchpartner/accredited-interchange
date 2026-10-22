@@ -82,12 +82,19 @@
     mount.querySelectorAll('.ai-shell [data-path]').forEach(function (a) {
       if (path.indexOf(a.getAttribute('data-path')) === 0) { a.classList.add('is-current'); a.setAttribute('aria-current', 'page'); }
     });
-    var dd = document.getElementById('aiSpecDropdown'), btn = document.getElementById('aiSpecDropdownBtn');
-    if (dd && btn) {
-      btn.addEventListener('click', function (e) { e.stopPropagation(); btn.setAttribute('aria-expanded', dd.classList.toggle('open')); });
-      document.addEventListener('click', function () { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
-      dd.addEventListener('click', function (e) { e.stopPropagation(); });
+    // Every header dropdown (Specialty Processing, More); opening one closes the others
+    var dds = Array.prototype.slice.call(mount.querySelectorAll('.ai-shell .tab-dropdown'));
+    function closeAll(except) {
+      dds.forEach(function (d) { if (d !== except) { d.classList.remove('open'); var b = d.querySelector('.tab-dropdown-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } });
     }
+    dds.forEach(function (dd) {
+      var btn = dd.querySelector('.tab-dropdown-btn');
+      if (!btn) return;
+      if (dd.querySelector('.is-current')) btn.classList.add('is-current');
+      btn.addEventListener('click', function (e) { e.stopPropagation(); closeAll(dd); btn.setAttribute('aria-expanded', dd.classList.toggle('open')); });
+      dd.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+    document.addEventListener('click', function () { closeAll(null); });
     var tog = document.getElementById('aiNavToggle'), menu = document.getElementById('aiMobileMenu'), x = document.getElementById('aiMobileClose');
     if (tog && menu) {
       var close = function () { menu.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
