@@ -48,7 +48,7 @@ Pages mark where these go with `<!--ai:header-->` and `<!--ai:footer-->`.
 
 ## Blog
 
-The GHL blog site "Accredited Interchange (Arizona) Blog" is at accreditedinterchange.com/blog. The author is Samantha Martinez, linking to /samantha-martinez. Categories: From the Owner, Payments Guides, Industry Guides, Payroll & Insurance, Arizona Business.
+The GHL blog site "Accredited Interchange Blog" is at accreditedinterchange.com/blog. The author is Samantha Martinez, linking to /samantha-martinez. Categories: From the Owner, Payments Guides, Industry Guides, Payroll & Insurance, Arizona Business.
 
 ## Making a change
 
