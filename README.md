@@ -50,6 +50,8 @@ Pages mark where these go with `<!--ai:header-->` and `<!--ai:footer-->`.
 
 The GHL blog site "Accredited Interchange Blog" is at accreditedinterchange.com/blog. The author is Samantha Martinez, linking to /samantha-martinez. Categories: From the Owner, Payments Guides, Industry Guides, Payroll & Insurance, Arizona Business.
 
+The blog home (and its category pages, which share the template) has one Custom Code element above GHL's Blog Posts element, with `data-page="blog"`. `pages/blog.html` adds the site header, the blog hero with category links, a statement-review call to action and the footer, and restyles GHL's post list into cards (newest post featured, keyword tags hidden, dates shown as "Oct 22, 2026"). New posts still come from GHL automatically. The footer block is marked `data-ai-append-body`, so `core.js` moves it to the end of the page, below the post list. Individual post pages (`/post/<slug>`) are not styled by this yet.
+
 ## Making a change
 
 1. Edit the page file in `pages/` and commit to `main`.
