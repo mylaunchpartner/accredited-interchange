@@ -32,11 +32,6 @@
   :focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
   .container{max-width:1180px;margin:0 auto;padding:0 32px}
 
-  .grid-overlay{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.45;
-    background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
-    background-size:44px 44px;
-    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 85%);
-    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 85%)}
   .glass{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
   .scanline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(79,70,255,.5),rgba(18,183,106,.45),transparent);animation:scan 7s linear infinite;pointer-events:none;z-index:1}
   @keyframes scan{0%{top:8%}50%{top:88%}100%{top:8%}}
@@ -476,7 +471,6 @@
 <div id="payments"></div>
 
 <section class="svc-band pay-band">
-  <div class="grid-overlay"></div>
   <div class="scanline"></div>
   <div class="container">
     <div class="svc-band-inner">
@@ -568,7 +562,6 @@
 </section>
 
 <section class="calc-section" id="calculator">
-  <div class="grid-overlay"></div>
   <div class="scanline"></div>
   <div class="container">
     <div class="calc-head reveal">
@@ -626,7 +619,6 @@
 <div id="payroll"></div>
 
 <section class="svc-band pr-band">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="svc-band-inner">
       <div class="svc-band-left reveal">
@@ -708,7 +700,6 @@
 <div id="insurance"></div>
 
 <section class="svc-band ins-band">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="svc-band-inner">
       <div class="svc-band-left reveal">
@@ -816,7 +807,6 @@
 
 <!-- WHY ACCREDITED -->
 <section class="why-section">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="why-inner">
       <div class="why-left reveal">
@@ -928,7 +918,6 @@
 
 <!-- FINAL CTA -->
 <section class="cta-section" id="contact">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="cta-inner reveal">
       <div class="eyebrow-label el-dark" style="display:inline-flex">Free, No-Obligation Consultation</div>

@@ -68,12 +68,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .mobile-login-btn:hover{background:var(--indigo);text-decoration:none}
 @media(max-width:680px){.header-cta{display:none}.nav-toggle{display:flex}}
 
-/* Grid overlay */
-.grid-overlay{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.4;
-  background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
-  background-size:44px 44px;
-  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 85%);
-  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 85%)}
 
 /* Animations */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -222,7 +216,6 @@ footer{background:var(--ink);padding:52px 0 28px}
 
 <!-- HERO -->
 <section class="pep-hero">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="pep-hero-inner">
       <div class="eyebrow-label el-dark" style="animation:fadeUp .5s ease both">RUO Peptide eCommerce</div>
@@ -368,7 +361,6 @@ footer{background:var(--ink);padding:52px 0 28px}
 
 <!-- DEEP SECTION: Proactive Management -->
 <section class="deep-band">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="deep-inner">
       <div class="deep-left">
@@ -479,7 +471,6 @@ footer{background:var(--ink);padding:52px 0 28px}
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="grid-overlay"></div>
   <div class="container">
     <div class="final-cta-inner">
       <div class="eyebrow-label el-dark" style="margin:0 auto 24px">Ready to Get Started?</div>
