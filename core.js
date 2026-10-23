@@ -120,6 +120,12 @@
       mount.innerHTML = '<style>' + p[4] + '</style>' + html;
       mount.style.minHeight = '';
       bindShell();
+      // Blocks marked data-ai-append-body (e.g. the footer on GHL blog pages,
+      // where the post list sits below this embed) move to the end of <body>.
+      mount.querySelectorAll('[data-ai-append-body]').forEach(function (el) {
+        el.classList.add('ai-appended');
+        document.body.appendChild(el);
+      });
       return runScripts(mount);
     })
     .then(function () {
