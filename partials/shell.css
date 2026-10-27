@@ -80,3 +80,8 @@
 .ai-shell a{text-decoration:none}
 .ai-shell address{font-style:normal}
 .ai-shell ul{padding:0;margin:0}
+
+/* Designer credit */
+.ai-shell .footer-credit{white-space:nowrap;margin-left:6px}
+.ai-shell .footer-credit a{color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+.ai-shell .footer-credit a:hover{color:rgba(255,255,255,.8)}
