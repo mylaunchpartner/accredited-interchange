@@ -66,8 +66,8 @@
   /* FACTS */
   .sf-home .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .sf-home .facts dl{display:grid;grid-template-columns:repeat(4,1fr)}
-  .sf-home .facts div{padding:30px 28px 30px 0}
-  .sf-home .facts div+div{padding-left:28px;border-left:1px solid var(--line)}
+  .sf-home .facts dl>div{padding:30px 28px 30px 0}
+  .sf-home .facts dl>div+div{padding-left:28px;border-left:1px solid var(--line)}
   .sf-home .facts dt{font-family:var(--display);font-weight:700;font-size:17px;color:var(--midnight);margin-bottom:4px;letter-spacing:-.01em}
   .sf-home .facts dd{font-size:15px;line-height:1.5}
 
@@ -180,8 +180,8 @@
     .sf-home .result{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:48px 0 0}
     .sf-home .closing-grid{grid-template-columns:1fr;gap:36px}
     .sf-home .facts dl{grid-template-columns:1fr 1fr}
-    .sf-home .facts div:nth-child(3){padding-left:0;border-left:0}
-    .sf-home .facts div:nth-child(n+3){border-top:1px solid var(--line)}
+    .sf-home .facts dl>div:nth-child(3){padding-left:0;border-left:0}
+    .sf-home .facts dl>div:nth-child(n+3){border-top:1px solid var(--line)}
   }
   @media (max-width:760px){
     .sf-home{font-size:16px}
@@ -193,8 +193,8 @@
     .sf-home .svc{padding:32px 24px}
     .sf-home .payments,.sf-home .more,.sf-home .owner,.sf-home .calc,.sf-home .faq,.sf-home .closing{padding:80px 0}
     .sf-home .facts dl{grid-template-columns:1fr}
-    .sf-home .facts div,.sf-home .facts div+div{padding:20px 0;border-left:0}
-    .sf-home .facts div+div{border-top:1px solid var(--line)}
+    .sf-home .facts dl>div,.sf-home .facts dl>div+div{padding:20px 0;border-left:0}
+    .sf-home .facts dl>div+div{border-top:1px solid var(--line)}
     .sf-home .steps li{grid-template-columns:44px 1fr}
     .sf-home .steps li::before{font-size:30px}
     .sf-home .faq-a-inner{padding-right:0}
@@ -338,7 +338,7 @@
           <li><strong>Employee portal.</strong> Pay stubs, tax documents and PTO balances.</li>
           <li><strong>W-2s and 1099s.</strong> Prepared, filed and sent before the deadline.</li>
         </ul>
-        <a href="/contact-us" class="text-link">Talk to a payroll specialist</a>
+        <a href="/payroll-services" class="text-link">See our payroll services</a>
       </article>
       <article class="svc" id="insurance">
         <h3>Business insurance</h3>
@@ -350,7 +350,7 @@
           <li><strong>Professional liability.</strong> Errors and omissions for consultants and contractors.</li>
           <li><strong>Business owner’s policy and group benefits.</strong> Bundled liability and property, plus health, dental and vision.</li>
         </ul>
-        <a href="/contact-us" class="text-link">Get an insurance quote</a>
+        <a href="/business-insurance" class="text-link">See business insurance coverage</a>
       </article>
     </div>
   </div>
@@ -439,8 +439,8 @@
 <script>
 window.addEventListener('load', function () {
   // Header tab highlight while scrolling the home page
-  var tabs = { payments: document.querySelector('.tab-pay'), payroll: document.querySelector('.tab-pr'), insurance: document.querySelector('.tab-ins') };
-  var ids = ['payments', 'payroll', 'insurance'];
+  var tabs = { payments: document.querySelector('.tab-pay') };
+  var ids = ['payments', 'payroll', 'insurance']; // payroll and insurance now have their own pages, so only Payments highlights here
   function updateActiveTabs() {
     var y = window.pageYOffset + 140, active = null;
     ids.forEach(function (id) { var el = document.getElementById(id); if (el && y >= el.getBoundingClientRect().top + window.pageYOffset) active = id; });
