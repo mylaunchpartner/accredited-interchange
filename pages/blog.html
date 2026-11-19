@@ -7,7 +7,7 @@
 html,body{background:var(--paper)!important}
 body{-webkit-font-smoothing:antialiased}
 .bl-hero{background:var(--indigo-dark);position:relative;overflow:hidden;padding:136px 0 0;font-family:'Inter',sans-serif}
-.bl-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(720px 460px at 12% -10%,rgba(79,70,255,.5),transparent 62%),radial-gradient(520px 380px at 95% 110%,rgba(79,70,255,.22),transparent 60%);pointer-events:none}
+.bl-hero::before{content:'';position:absolute;inset:0;background:none;pointer-events:none}
 .bl-wrap{max-width:1140px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 .bl-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#C7C4FF;background:rgba(79,70,255,.22);padding:6px 13px;border-radius:999px;margin-bottom:18px}
 .bl-eyebrow i{width:6px;height:6px;border-radius:50%;background:#8D87FF;display:block}
@@ -52,7 +52,7 @@ body{-webkit-font-smoothing:antialiased}
 .hl-blog-post-home .standard-blog-content>.flex:last-child{order:4;margin-top:auto;padding-top:18px}
 .hl-blog-post-home .blog-button{font-family:'Inter',sans-serif!important;font-size:14px!important;font-weight:600!important;color:var(--indigo-mid)!important;text-decoration:none!important;display:inline-flex!important;align-items:center;gap:6px;text-transform:none!important;padding:0!important;background:none!important;border:0!important}
 .hl-blog-post-home .blog-button svg{display:none}
-.hl-blog-post-home .blog-button::after{content:'→';transition:transform .2s}
+.hl-blog-post-home .blog-button::after{content:none}
 .hl-blog-post-home .blog-box:hover .blog-button::after{transform:translateX(4px)}
 
 /* Featured (newest) post spans the full row */
@@ -102,7 +102,7 @@ body{-webkit-font-smoothing:antialiased}
 <section class="bl-hero">
   <div class="bl-wrap">
     <span class="bl-eyebrow"><i></i>The Accredited Interchange Blog</span>
-    <h1>Straight answers on <em>payments</em>, payroll and running a business.</h1>
+    <h1>Straight answers on payments, payroll and running a business.</h1>
     <p class="bl-lede">Plain-English guides on processing fees, pricing models, compliance and the paperwork that comes with owning a business, written by the people who set up merchant accounts every day.</p>
     <div class="bl-by">
       <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/samantha-martinez-accredited-interchange.jpg" alt="Samantha Martinez" width="44" height="44" onerror="this.remove()">
@@ -126,7 +126,7 @@ body{-webkit-font-smoothing:antialiased}
           <h2>Wondering what you're really paying to process cards?</h2>
           <p>Send us a recent statement. We'll show you the true effective rate and what you'd pay with interchange-plus pricing, with no obligation to switch.</p>
         </div>
-        <a href="/contact-us" class="bl-btn">Get a free statement review →</a>
+        <a href="/contact-us" class="bl-btn">Get a free statement review</a>
       </div>
     </div>
   </section>

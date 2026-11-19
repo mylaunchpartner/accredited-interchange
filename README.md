@@ -64,3 +64,17 @@ The blog home (and its category pages, which share the template) has one Custom 
 ## Assets
 
 Logos are in `assets/`. Add Samantha's headshot as `assets/samantha-martinez-accredited-interchange.jpg`; the home, about and author pages show it automatically, and show "SM" initials until it exists. Pages load the logo from `assets/ai-logo-mark.png` on GitHub Pages, so nothing depends on Webflow.
+
+## SEO
+
+- **Crawlable copy:** the page HTML that GHL serves would otherwise be empty, because each page loads from here with JavaScript. `seo/embeds/<page>.html` is the full Custom Code embed for each GHL page. It holds a plain copy of the page text and page-level structured data (breadcrumbs, services, FAQ), and `core.js` swaps in the designed page on load. After changing a page's copy, run `python3 tools/build-seo-embeds.py` and paste the changed embed into that page's Custom Code element in GHL.
+- **Share images:** `assets/accredited-og-home.jpg` and `assets/accredited-og-peptides.jpg` (1200×630), set in GHL → SEO & AI search optimization → Images.
+- **Site-wide schema** (Organization, Person) stays in `seo/schema-head.html`, pasted in GHL's head tracking code.
+
+## Photos
+
+Licensed from Envato: hero `assets/hero-merchant-register.jpg` ("Woman Calculates Finances in Stylish Clothing Store"). `merchant-counter-tap.jpg` and the three `ruo-*.jpg` photos are the same Envato photos used on starfipay.com.
+
+## Design
+
+Layout matches starfipay.com; styling keeps Accredited's own identity: Space Grotesk headings, Inter body, indigo `#4F46FF` for actions, deep indigo `#161335` for dark bands, green `#12B76A`/`#2FD08A` for payroll and savings. Avoid pill labels above headings, colored words inside headlines, glow gradients, scroll-in animations and graph-paper backgrounds.

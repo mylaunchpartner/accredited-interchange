@@ -13,9 +13,44 @@
   var self = document.currentScript;
   var BASE = self.src.replace(/[?#].*$/, '').replace(/[^\/]*$/, '');
   var BUST = "v=" + Math.floor(Date.now() / 60000); // new cache key every minute
-  var page = (mount.getAttribute('data-page') || 'home').replace(/[^a-z0-9-]/gi, '');
+  // data-page wins when set; otherwise the page is picked from the URL path,
+  // so every GHL page can carry the identical embed (handy when cloning pages).
+  var PATHS = {
+    '/': 'home', '/contact-us': 'contact', '/message-received': 'message-received',
+    '/specialty-peptide-payment-processing': 'peptides', '/privacy-policy': 'privacy',
+    '/terms-of-service': 'terms', '/about': 'about', '/ownership': 'ownership',
+    '/samantha-martinez': 'samantha-martinez', '/blog': 'blog'
+  };
+  var urlPath = location.pathname.replace(/\/+$/, '') || '/';
+  if (urlPath.indexOf('/blog') === 0) urlPath = '/blog';
+  var page = (mount.getAttribute('data-page') || PATHS[urlPath] || 'home').replace(/[^a-z0-9-]/gi, '');
 
   mount.style.minHeight = '100vh';
+  // Hide the mount until the page and shell styles are in place, so nothing flashes unstyled.
+  mount.style.visibility = 'hidden';
+  function reveal() { mount.style.visibility = ''; }
+  var revealTimer = setTimeout(reveal, 4000); // never leave the page hidden
+
+  // Pages with a GHL form or calendar: open connections to GHL's hosts now, while the
+  // page files are still loading, so the embedded widget starts faster when it's added.
+  if (page === 'contact' || page === 'message-received') {
+    ['https://api.leadconnectorhq.com', 'https://stcdn.leadconnectorhq.com', 'https://backend.leadconnectorhq.com',
+     'https://link.msgsndr.com', 'https://challenges.cloudflare.com'].forEach(function (h) {
+      var l = document.createElement('link'); l.rel = 'preconnect'; l.href = h; l.crossOrigin = '';
+      document.head.appendChild(l);
+      var d = document.createElement('link'); d.rel = 'dns-prefetch'; d.href = h;
+      document.head.appendChild(d);
+    });
+  }
+
+  // Fonts load from <head>, not via @import inside the shell CSS (Safari holds back every
+  // rule in a stylesheet until its @import finishes, which showed the header unstyled).
+  if (!document.getElementById('sf-fonts')) {
+    var pc = document.createElement('link'); pc.rel = 'preconnect'; pc.href = 'https://fonts.gstatic.com'; pc.crossOrigin = '';
+    var fl = document.createElement('link'); fl.id = 'sf-fonts'; fl.rel = 'stylesheet';
+    fl.href = 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap';
+    document.head.appendChild(pc); document.head.appendChild(fl);
+  }
 
   // GHL / Webflow wrap custom-code blocks in padded, width-capped containers.
   // Flatten every wrapper between the mount and <body> so the site runs edge to edge.
@@ -119,6 +154,8 @@
       html = html.split('<!--ai:nap-->').join(p[3]);
       mount.innerHTML = '<style>' + p[4] + '</style>' + html;
       mount.style.minHeight = '';
+      // Show the page on the next frames, once the injected styles have been applied
+      requestAnimationFrame(function () { requestAnimationFrame(function () { clearTimeout(revealTimer); reveal(); }); });
       bindShell();
       // Blocks marked data-ai-append-body (e.g. the footer on GHL blog pages,
       // where the post list sits below this embed) move to the end of <body>.
@@ -138,6 +175,7 @@
     .catch(function (err) {
       if (window.console) console.error('[AI loader]', err);
       mount.style.minHeight = '';
+      clearTimeout(revealTimer); reveal();
       mount.innerHTML = '<p style="padding:80px 24px;text-align:center;font:16px/1.6 -apple-system,sans-serif;color:#0F1222">' +
         'Sorry, this page didn’t load. Please refresh, or <a href="/contact-us">contact us</a>.</p>';
     });
