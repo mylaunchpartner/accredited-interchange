@@ -1,0 +1,342 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  .sf-svc{
+    --midnight:#161335; --cobalt:#4F46FF; --cobalt-deep:#3730D9; --cobalt-tint:#EEF0FF;
+    --gold:#2FD08A; --mist:#F3F5FA; --line:#DEE2EC; --slate:#474E68; --quiet:#7A8199; --white:#FFFFFF;
+    --display:'Space Grotesk',system-ui,sans-serif; --text:'Inter',system-ui,sans-serif;
+    font-family:var(--text); color:var(--slate); font-size:17px; line-height:1.6; background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  .sf-svc *,.sf-svc *::before,.sf-svc *::after{box-sizing:border-box}
+  .sf-svc h1,.sf-svc h2,.sf-svc h3,.sf-svc p,.sf-svc dl,.sf-svc dd,.sf-svc ul,.sf-svc ol,.sf-svc figure{margin:0;padding:0}
+  .sf-svc a{color:var(--cobalt);text-decoration:none}
+  .sf-svc a:focus-visible,.sf-svc button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+  .sf-svc .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .sf-svc h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.015em;color:var(--midnight)}
+  .sf-svc h3{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.25;letter-spacing:-.015em;color:var(--midnight)}
+  .sf-svc .lede{font-size:19px;line-height:1.6;max-width:32em}
+  .sf-svc img{display:block;max-width:100%;height:auto;border-radius:16px;background:var(--mist)}
+
+  .sf-svc .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--text);font-weight:600;font-size:15px;line-height:1;padding:16px 22px;border-radius:999px;border:2px solid transparent;transition:background-color .15s,border-color .15s}
+  .sf-svc .btn-primary{background:var(--cobalt);color:var(--white)}
+  .sf-svc .btn-primary:hover{background:var(--cobalt-deep)}
+  .sf-svc .btn-plain{color:var(--midnight);border-color:var(--line);background:var(--white)}
+  .sf-svc .btn-plain:hover{border-color:var(--midnight)}
+  .sf-svc .btn-gold{background:var(--gold);color:var(--midnight)}
+  .sf-svc .btn-gold:hover{background:#4FDDA0}
+
+  /* Hero */
+  .sf-svc .hero{padding:132px 0 88px}
+  .sf-svc .hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center}
+  .sf-svc .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.6vw,60px);line-height:1.02;letter-spacing:-.035em;color:var(--midnight);margin-bottom:26px}
+  .sf-svc .hero .lede{margin-bottom:36px}
+  .sf-svc .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .sf-svc .hero-photo{position:relative}
+  .sf-svc .hero-photo img{width:100%;aspect-ratio:4/3.3;object-fit:cover}
+  .sf-svc .hero-photo figcaption{position:absolute;left:-32px;bottom:-28px;background:var(--midnight);color:var(--white);border-radius:16px;padding:18px 22px;max-width:300px;font-size:14.5px;line-height:1.5}
+  .sf-svc .hero-photo figcaption strong{display:block;font-family:var(--display);font-weight:700;font-size:16px;margin-bottom:2px;color:var(--gold)}
+
+  /* Facts */
+  .sf-svc .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sf-svc .facts dl{display:grid;grid-template-columns:repeat(4,1fr)}
+  .sf-svc .facts dl>div{padding:30px 28px 30px 0}
+  .sf-svc .facts dl>div+div{padding-left:28px;border-left:1px solid var(--line)}
+  .sf-svc .facts dt{font-family:var(--display);font-weight:700;font-size:17px;color:var(--midnight);margin-bottom:4px;letter-spacing:-.01em}
+  .sf-svc .facts dd{font-size:15px;line-height:1.5}
+
+  /* Intro + side list */
+  .sf-svc .problem{padding:120px 0}
+  .sf-svc .split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:start}
+  .sf-svc .problem h2{margin-bottom:24px}
+  .sf-svc .problem p{margin-bottom:18px;max-width:34em}
+  .sf-svc .closer{margin-top:28px;padding-left:20px;border-left:3px solid var(--svc);font-family:var(--display);font-weight:700;font-size:18px;line-height:1.45;color:var(--midnight);max-width:30em}
+  .sf-svc .triggers{background:var(--mist);border-radius:16px;padding:36px 36px 28px}
+  .sf-svc .triggers h3{margin-bottom:18px}
+  .sf-svc .triggers ul{list-style:none}
+  .sf-svc .triggers li{padding:12px 0 12px 22px;border-top:1px solid var(--line);position:relative;font-size:15.5px;line-height:1.5}
+  .sf-svc .triggers li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:2px;background:var(--svc)}
+
+  /* Features */
+  .sf-svc .features{padding:120px 0;background:var(--mist)}
+  .sf-svc .features-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:end;margin-bottom:56px}
+  .sf-svc .features-head h2{max-width:14em}
+  .sf-svc .features-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+  .sf-svc .features-body img{width:100%;aspect-ratio:4/5;object-fit:cover;position:sticky;top:110px}
+  .sf-svc .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .sf-svc .feat-list div{padding:22px 0;border-top:1px solid var(--line)}
+  .sf-svc .feat-list dt{font-family:var(--display);font-weight:700;font-size:17px;color:var(--midnight);margin-bottom:6px}
+  .sf-svc .feat-list dd{font-size:15.5px;line-height:1.55}
+
+  /* Dark band with steps */
+  .sf-svc .monitor{background:var(--midnight);color:#C9CEE3;padding:112px 0}
+  .sf-svc .monitor-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:80px;align-items:center}
+  .sf-svc .monitor img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--midnight)}
+  .sf-svc .monitor h2{color:var(--white);margin-bottom:22px}
+  .sf-svc .monitor p{max-width:32em;margin-bottom:18px}
+  .sf-svc .steps{list-style:none;counter-reset:s;margin:32px 0 40px}
+  .sf-svc .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);font-size:15.5px;line-height:1.5}
+  .sf-svc .steps li::before{content:counter(s);grid-row:span 2;width:32px;height:32px;border-radius:999px;background:var(--gold);color:var(--midnight);font-family:var(--display);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .sf-svc .steps strong{display:block;font-family:var(--display);font-weight:700;color:var(--white);font-size:16.5px}
+
+  /* Checklist */
+  .sf-svc .fit{padding:120px 0}
+  .sf-svc .fit h2{margin-bottom:22px}
+  .sf-svc .fit p{max-width:30em;margin-bottom:18px}
+  .sf-svc .fit ul{list-style:none}
+  .sf-svc .fit li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5}
+  .sf-svc .fit li:last-child{border-bottom:1px solid var(--line)}
+  .sf-svc .fit li strong{color:var(--midnight);font-weight:600}
+  .sf-svc .fit .mk{color:var(--svc);font-weight:700}
+  .sf-svc .fit-head{position:sticky;top:110px}
+
+  /* FAQ */
+  .sf-svc .faq{padding:112px 0;border-top:1px solid var(--line)}
+  .sf-svc .faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px}
+  .sf-svc .faq-grid h2{margin-bottom:18px}
+  .sf-svc .faq-item{border-top:1px solid var(--line)}
+  .sf-svc .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .sf-svc .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:0;padding:24px 0;text-align:left;cursor:pointer;font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em;color:var(--midnight)}
+  .sf-svc .faq-q .plus{position:relative;width:14px;height:14px;flex-shrink:0}
+  .sf-svc .faq-q .plus::before,.sf-svc .faq-q .plus::after{content:"";position:absolute;background:var(--cobalt);left:0;top:6px;width:14px;height:2px;transition:transform .2s}
+  .sf-svc .faq-q .plus::after{transform:rotate(90deg)}
+  .sf-svc .faq-item.open .plus::after{transform:rotate(0)}
+  .sf-svc .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .sf-svc .faq-a-inner{padding:0 48px 26px 0;font-size:16px;max-width:40em}
+
+  /* Guides */
+  .sf-svc .guides{padding:0 0 112px}
+  .sf-svc .guides h2{font-size:clamp(26px,2.8vw,34px);margin-bottom:28px}
+  .sf-svc .guide-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sf-svc .guide-list a{display:block;height:100%;padding:22px 24px;border:1px solid var(--line);border-radius:16px;color:var(--midnight);font-family:var(--display);font-weight:700;font-size:17px;line-height:1.3;transition:border-color .15s}
+  .sf-svc .guide-list a:hover{border-color:var(--midnight)}
+  .sf-svc .guide-list small{display:block;margin-top:8px;font-family:var(--text);font-weight:400;font-size:14.5px;line-height:1.5;color:var(--slate)}
+
+  /* Closing */
+  .sf-svc .closing{background:var(--midnight);padding:104px 0;color:#C9CEE3}
+  .sf-svc .closing-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:end}
+  .sf-svc .closing h2{color:var(--white);font-size:clamp(32px,4.2vw,54px);margin-bottom:20px}
+  .sf-svc .closing p{max-width:34em}
+  .sf-svc .closing-actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .sf-svc .closing-actions a.tel{font-family:var(--display);font-weight:700;font-size:22px;color:var(--white)}
+  .sf-svc .closing-actions small{font-size:14px;color:#8C93B0}
+
+  @media (max-width:1060px){
+    .sf-svc .hero-grid,.sf-svc .split,.sf-svc .features-head,.sf-svc .features-body,.sf-svc .monitor-grid,.sf-svc .closing-grid,.sf-svc .faq-grid{grid-template-columns:1fr;gap:48px}
+    .sf-svc .hero-photo{max-width:720px}
+    .sf-svc .hero-photo figcaption{left:-12px}
+    .sf-svc .features-body img{position:static;aspect-ratio:16/10}
+    .sf-svc .monitor img{aspect-ratio:16/11;max-width:640px}
+    .sf-svc .fit-head{position:static}
+    .sf-svc .facts dl{grid-template-columns:1fr 1fr}
+    .sf-svc .facts dl>div:nth-child(3){padding-left:0;border-left:0}
+    .sf-svc .facts dl>div:nth-child(n+3){border-top:1px solid var(--line)}
+    .sf-svc .guide-list{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .sf-svc{font-size:16px}
+    .sf-svc .wrap{padding:0 20px}
+    .sf-svc .hero{padding:104px 0 72px}
+    .sf-svc .hero-photo figcaption{position:relative;left:auto;bottom:auto;margin:-36px 14px 0;max-width:none}
+    .sf-svc .problem,.sf-svc .features,.sf-svc .monitor,.sf-svc .fit,.sf-svc .faq,.sf-svc .closing{padding:80px 0}
+    .sf-svc .guides{padding:0 0 80px}
+    .sf-svc .feat-list,.sf-svc .guide-list{grid-template-columns:1fr}
+    .sf-svc .triggers{padding:28px 22px 18px}
+    .sf-svc .facts dl{grid-template-columns:1fr}
+    .sf-svc .facts dl>div,.sf-svc .facts dl>div+div{padding:20px 0;border-left:0}
+    .sf-svc .facts dl>div+div{border-top:1px solid var(--line)}
+    .sf-svc .faq-a-inner{padding-right:0}
+  }
+  @media (prefers-reduced-motion:reduce){.sf-svc .faq-a{transition:none}}
+</style>
+
+<!--ai:header-->
+
+<div class="sf-svc" style="--svc:#0A8F53">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Payroll services for small businesses</h1>
+      <p class="lede">Accredited Interchange runs automated, compliant payroll for small and midsize businesses nationwide. Pay runs, payroll tax filings, direct deposit and year-end forms are handled for you, by people who answer the phone.</p>
+      <div class="hero-actions">
+        <a href="/contact-us" class="btn btn-primary">Talk to a payroll specialist</a>
+        <a href="#included" class="btn btn-plain">See what’s included</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/payroll-hero.jpg" alt="A café owner and an employee smile while reviewing payroll on a laptop" width="1800" height="1201" style="object-position:45% 40%">
+      <figcaption><strong>First payroll within a week</strong>For most businesses. We gather your employee data, set your pay schedule and set up the state tax accounts you need.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section class="facts" aria-label="What every payroll account includes">
+  <div class="wrap">
+    <dl>
+      <div><dt>No per-run fees</dt><dd>Run payroll on your schedule.</dd></div>
+      <div><dt>Tax filing in all 50 states</dt><dd>Federal, state and local.</dd></div>
+      <div><dt>Next-day direct deposit</dt><dd>Available for your team.</dd></div>
+      <div><dt>One point of contact</dt><dd>Plus 24/7 U.S.-based support.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="problem">
+  <div class="wrap split">
+    <div>
+      <h2>Payroll is a compliance job, not just a direct deposit</h2>
+      <p>Paying people is the easy part. The work is everything around it: withholding the right amounts, depositing taxes on time, filing quarterly and annual returns, and keeping up when you hire in a new state.</p>
+      <p>A missed deposit or a wrong filing turns into penalty notices months later, usually when you’re busiest. We take that work off your desk and keep it on a schedule.</p>
+      <p class="closer">You approve the pay run. We handle the deposits, filings and forms that come after it.</p>
+    </div>
+    <div class="triggers">
+      <h3>Where small-business payroll usually goes wrong</h3>
+      <ul>
+        <li>Federal and state tax deposits made late or for the wrong amount</li>
+        <li>New hires not reported to the state on time</li>
+        <li>Overtime calculated incorrectly for hourly staff</li>
+        <li>Workers paid as contractors who should be employees</li>
+        <li>No state unemployment account after hiring in a new state</li>
+        <li>Final paychecks issued after the state deadline</li>
+        <li>W-2s and 1099s sent late or with errors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="features" id="included">
+  <div class="wrap">
+    <div class="features-head">
+      <h2>What our payroll service includes</h2>
+      <p>Everything a small business needs to pay employees correctly and stay current with tax agencies, in one account.</p>
+    </div>
+    <div class="features-body">
+      <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/payroll-team.jpg" alt="A small-business team in work aprons stands together in their shop" width="1400" height="909" loading="lazy" style="object-position:50% 40%">
+      <dl class="feat-list">
+        <div><dt>Scheduled pay runs</dt><dd>Review and approve each payroll in one click, with no per-run fees.</dd></div>
+        <div><dt>Payroll tax filing in all 50 states</dt><dd>Federal, state and local tax deposits and filings, made for you.</dd></div>
+        <div><dt>Direct deposit</dt><dd>Pay your team by direct deposit, with next-day deposit available.</dd></div>
+        <div><dt>Employee portal</dt><dd>Employees see their pay stubs, tax documents and PTO balances without asking you.</dd></div>
+        <div><dt>W-2s and 1099s</dt><dd>Year-end forms prepared, filed and sent before the deadline.</dd></div>
+        <div><dt>Setup done for you</dt><dd>We gather employee data, set your pay schedule and set up the state tax accounts you need.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- SWITCHING -->
+<section class="monitor">
+  <div class="wrap monitor-grid">
+    <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/payroll-owner.jpg" alt="A smiling restaurant owner works on a laptop at his counter" width="1400" height="934" loading="lazy" style="object-position:78% 50%">
+    <div>
+      <h2>Moving your payroll to us</h2>
+      <p>Most businesses run their first payroll with us within a week. Here’s how it goes.</p>
+      <ol class="steps">
+        <li><strong>Tell us how you pay today</strong>How many people you pay, how often, and which states they work in.</li>
+        <li><strong>We set everything up</strong>Employee records, pay schedule, direct deposit and state tax accounts.</li>
+        <li><strong>Approve your first pay run</strong>You review it before it goes out. After that, it runs on schedule.</li>
+      </ol>
+      <a href="/contact-us" class="btn btn-gold">Talk to a payroll specialist</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <h2>Payroll questions</h2>
+      <p>Something else? <a href="/contact-us">Send us a message</a></p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does payroll setup take?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Most businesses run their first payroll within a week. We gather your employee data, set your pay schedule and set up any state tax accounts you need.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you charge a fee for each payroll run?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. Scheduled pay runs carry no per-run fees, so you can pay your team on whatever schedule you choose.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Which states do you file payroll taxes in?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">All 50. We handle federal, state and local payroll tax deposits and filings.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can employees see their own pay stubs?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. The employee portal holds their pay stubs, tax documents and PTO balances.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need to process payments with you to use your payroll service?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. Payroll works on its own. If you also use our payment processing or business insurance, you keep the same point of contact for all of it.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="guides">
+  <div class="wrap">
+    <h2>Payroll guides for employers</h2>
+    <ul class="guide-list">
+      <li><a href="/post/choosing-a-payroll-provider">Choosing a payroll provider<small>What to compare before you sign up.</small></a></li>
+      <li><a href="/post/hiring-your-first-employee-in-arizona">Hiring your first employee in Arizona<small>The registrations and paperwork to finish first.</small></a></li>
+      <li><a href="/post/form-941-guide-for-small-employers">Form 941 for small employers<small>The quarterly federal payroll tax return, explained.</small></a></li>
+      <li><a href="/post/overtime-pay-rules-for-employers">Overtime pay rules<small>Who qualifies and how to calculate it.</small></a></li>
+      <li><a href="/post/form-w-2-year-end-guide">W-2 year-end guide<small>Deadlines and what goes on the form.</small></a></li>
+      <li><a href="/post/arizona-new-hire-reporting">Arizona new-hire reporting<small>What to report and when it’s due.</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap closing-grid">
+    <div>
+      <h2>Get payroll off your plate</h2>
+      <p>Tell us how many people you pay and how often. We’ll walk you through setup and what it would cost, with no commitment.</p>
+    </div>
+    <div class="closing-actions">
+      <a href="/contact-us" class="btn btn-gold">Talk to a payroll specialist</a>
+      <a href="tel:+16199956484" class="tel">(619) 995-6484</a>
+      <small>24/7 U.S.-based support</small>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!--ai:footer-->
+
+<script>
+window.addEventListener('load', function () {
+  // FAQ accordion
+  document.querySelectorAll('.sf-svc .faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', function () {
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.sf-svc .faq-item.open').forEach(function (o) {
+        if (o !== item) { o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); o.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      item.classList.toggle('open', !open);
+      q.setAttribute('aria-expanded', String(!open));
+      a.style.maxHeight = open ? null : a.scrollHeight + 'px';
+    });
+  });
+  // In-page links scroll the window (GHL wraps content in its own containers)
+  document.querySelectorAll('.sf-svc a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var el = document.getElementById(link.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 80), behavior: 'instant' });
+    });
+  });
+});
+</script>

@@ -19,7 +19,8 @@
     '/': 'home', '/contact-us': 'contact', '/message-received': 'message-received',
     '/specialty-peptide-payment-processing': 'peptides', '/privacy-policy': 'privacy',
     '/terms-of-service': 'terms', '/about': 'about', '/ownership': 'ownership',
-    '/samantha-martinez': 'samantha-martinez', '/blog': 'blog'
+    '/samantha-martinez': 'samantha-martinez', '/blog': 'blog',
+    '/payroll-services': 'payroll', '/business-insurance': 'insurance'
   };
   var urlPath = location.pathname.replace(/\/+$/, '') || '/';
   if (urlPath.indexOf('/blog') === 0) urlPath = '/blog';

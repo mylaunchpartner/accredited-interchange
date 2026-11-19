@@ -1,0 +1,339 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  .sf-svc{
+    --midnight:#161335; --cobalt:#4F46FF; --cobalt-deep:#3730D9; --cobalt-tint:#EEF0FF;
+    --gold:#2FD08A; --mist:#F3F5FA; --line:#DEE2EC; --slate:#474E68; --quiet:#7A8199; --white:#FFFFFF;
+    --display:'Space Grotesk',system-ui,sans-serif; --text:'Inter',system-ui,sans-serif;
+    font-family:var(--text); color:var(--slate); font-size:17px; line-height:1.6; background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  .sf-svc *,.sf-svc *::before,.sf-svc *::after{box-sizing:border-box}
+  .sf-svc h1,.sf-svc h2,.sf-svc h3,.sf-svc p,.sf-svc dl,.sf-svc dd,.sf-svc ul,.sf-svc ol,.sf-svc figure{margin:0;padding:0}
+  .sf-svc a{color:var(--cobalt);text-decoration:none}
+  .sf-svc a:focus-visible,.sf-svc button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+  .sf-svc .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .sf-svc h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.015em;color:var(--midnight)}
+  .sf-svc h3{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.25;letter-spacing:-.015em;color:var(--midnight)}
+  .sf-svc .lede{font-size:19px;line-height:1.6;max-width:32em}
+  .sf-svc img{display:block;max-width:100%;height:auto;border-radius:16px;background:var(--mist)}
+
+  .sf-svc .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--text);font-weight:600;font-size:15px;line-height:1;padding:16px 22px;border-radius:999px;border:2px solid transparent;transition:background-color .15s,border-color .15s}
+  .sf-svc .btn-primary{background:var(--cobalt);color:var(--white)}
+  .sf-svc .btn-primary:hover{background:var(--cobalt-deep)}
+  .sf-svc .btn-plain{color:var(--midnight);border-color:var(--line);background:var(--white)}
+  .sf-svc .btn-plain:hover{border-color:var(--midnight)}
+  .sf-svc .btn-gold{background:var(--gold);color:var(--midnight)}
+  .sf-svc .btn-gold:hover{background:#4FDDA0}
+
+  /* Hero */
+  .sf-svc .hero{padding:132px 0 88px}
+  .sf-svc .hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center}
+  .sf-svc .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.6vw,60px);line-height:1.02;letter-spacing:-.035em;color:var(--midnight);margin-bottom:26px}
+  .sf-svc .hero .lede{margin-bottom:36px}
+  .sf-svc .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .sf-svc .hero-photo{position:relative}
+  .sf-svc .hero-photo img{width:100%;aspect-ratio:4/3.3;object-fit:cover}
+  .sf-svc .hero-photo figcaption{position:absolute;left:-32px;bottom:-28px;background:var(--midnight);color:var(--white);border-radius:16px;padding:18px 22px;max-width:300px;font-size:14.5px;line-height:1.5}
+  .sf-svc .hero-photo figcaption strong{display:block;font-family:var(--display);font-weight:700;font-size:16px;margin-bottom:2px;color:var(--gold)}
+
+  /* Facts */
+  .sf-svc .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sf-svc .facts dl{display:grid;grid-template-columns:repeat(4,1fr)}
+  .sf-svc .facts dl>div{padding:30px 28px 30px 0}
+  .sf-svc .facts dl>div+div{padding-left:28px;border-left:1px solid var(--line)}
+  .sf-svc .facts dt{font-family:var(--display);font-weight:700;font-size:17px;color:var(--midnight);margin-bottom:4px;letter-spacing:-.01em}
+  .sf-svc .facts dd{font-size:15px;line-height:1.5}
+
+  /* Intro + side list */
+  .sf-svc .problem{padding:120px 0}
+  .sf-svc .split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:start}
+  .sf-svc .problem h2{margin-bottom:24px}
+  .sf-svc .problem p{margin-bottom:18px;max-width:34em}
+  .sf-svc .closer{margin-top:28px;padding-left:20px;border-left:3px solid var(--svc);font-family:var(--display);font-weight:700;font-size:18px;line-height:1.45;color:var(--midnight);max-width:30em}
+  .sf-svc .triggers{background:var(--mist);border-radius:16px;padding:36px 36px 28px}
+  .sf-svc .triggers h3{margin-bottom:18px}
+  .sf-svc .triggers ul{list-style:none}
+  .sf-svc .triggers li{padding:12px 0 12px 22px;border-top:1px solid var(--line);position:relative;font-size:15.5px;line-height:1.5}
+  .sf-svc .triggers li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:2px;background:var(--svc)}
+
+  /* Features */
+  .sf-svc .features{padding:120px 0;background:var(--mist)}
+  .sf-svc .features-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:end;margin-bottom:56px}
+  .sf-svc .features-head h2{max-width:14em}
+  .sf-svc .features-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+  .sf-svc .features-body img{width:100%;aspect-ratio:4/5;object-fit:cover;position:sticky;top:110px}
+  .sf-svc .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .sf-svc .feat-list div{padding:22px 0;border-top:1px solid var(--line)}
+  .sf-svc .feat-list dt{font-family:var(--display);font-weight:700;font-size:17px;color:var(--midnight);margin-bottom:6px}
+  .sf-svc .feat-list dd{font-size:15.5px;line-height:1.55}
+
+  /* Dark band with steps */
+  .sf-svc .monitor{background:var(--midnight);color:#C9CEE3;padding:112px 0}
+  .sf-svc .monitor-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:80px;align-items:center}
+  .sf-svc .monitor img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--midnight)}
+  .sf-svc .monitor h2{color:var(--white);margin-bottom:22px}
+  .sf-svc .monitor p{max-width:32em;margin-bottom:18px}
+  .sf-svc .steps{list-style:none;counter-reset:s;margin:32px 0 40px}
+  .sf-svc .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);font-size:15.5px;line-height:1.5}
+  .sf-svc .steps li::before{content:counter(s);grid-row:span 2;width:32px;height:32px;border-radius:999px;background:var(--gold);color:var(--midnight);font-family:var(--display);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .sf-svc .steps strong{display:block;font-family:var(--display);font-weight:700;color:var(--white);font-size:16.5px}
+
+  /* Checklist */
+  .sf-svc .fit{padding:120px 0}
+  .sf-svc .fit h2{margin-bottom:22px}
+  .sf-svc .fit p{max-width:30em;margin-bottom:18px}
+  .sf-svc .fit ul{list-style:none}
+  .sf-svc .fit li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5}
+  .sf-svc .fit li:last-child{border-bottom:1px solid var(--line)}
+  .sf-svc .fit li strong{color:var(--midnight);font-weight:600}
+  .sf-svc .fit .mk{color:var(--svc);font-weight:700}
+  .sf-svc .fit-head{position:sticky;top:110px}
+
+  /* FAQ */
+  .sf-svc .faq{padding:112px 0;border-top:1px solid var(--line)}
+  .sf-svc .faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px}
+  .sf-svc .faq-grid h2{margin-bottom:18px}
+  .sf-svc .faq-item{border-top:1px solid var(--line)}
+  .sf-svc .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .sf-svc .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:0;padding:24px 0;text-align:left;cursor:pointer;font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em;color:var(--midnight)}
+  .sf-svc .faq-q .plus{position:relative;width:14px;height:14px;flex-shrink:0}
+  .sf-svc .faq-q .plus::before,.sf-svc .faq-q .plus::after{content:"";position:absolute;background:var(--cobalt);left:0;top:6px;width:14px;height:2px;transition:transform .2s}
+  .sf-svc .faq-q .plus::after{transform:rotate(90deg)}
+  .sf-svc .faq-item.open .plus::after{transform:rotate(0)}
+  .sf-svc .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .sf-svc .faq-a-inner{padding:0 48px 26px 0;font-size:16px;max-width:40em}
+
+  /* Guides */
+  .sf-svc .guides{padding:0 0 112px}
+  .sf-svc .guides h2{font-size:clamp(26px,2.8vw,34px);margin-bottom:28px}
+  .sf-svc .guide-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sf-svc .guide-list a{display:block;height:100%;padding:22px 24px;border:1px solid var(--line);border-radius:16px;color:var(--midnight);font-family:var(--display);font-weight:700;font-size:17px;line-height:1.3;transition:border-color .15s}
+  .sf-svc .guide-list a:hover{border-color:var(--midnight)}
+  .sf-svc .guide-list small{display:block;margin-top:8px;font-family:var(--text);font-weight:400;font-size:14.5px;line-height:1.5;color:var(--slate)}
+
+  /* Closing */
+  .sf-svc .closing{background:var(--midnight);padding:104px 0;color:#C9CEE3}
+  .sf-svc .closing-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:end}
+  .sf-svc .closing h2{color:var(--white);font-size:clamp(32px,4.2vw,54px);margin-bottom:20px}
+  .sf-svc .closing p{max-width:34em}
+  .sf-svc .closing-actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .sf-svc .closing-actions a.tel{font-family:var(--display);font-weight:700;font-size:22px;color:var(--white)}
+  .sf-svc .closing-actions small{font-size:14px;color:#8C93B0}
+
+  @media (max-width:1060px){
+    .sf-svc .hero-grid,.sf-svc .split,.sf-svc .features-head,.sf-svc .features-body,.sf-svc .monitor-grid,.sf-svc .closing-grid,.sf-svc .faq-grid{grid-template-columns:1fr;gap:48px}
+    .sf-svc .hero-photo{max-width:720px}
+    .sf-svc .hero-photo figcaption{left:-12px}
+    .sf-svc .features-body img{position:static;aspect-ratio:16/10}
+    .sf-svc .monitor img{aspect-ratio:16/11;max-width:640px}
+    .sf-svc .fit-head{position:static}
+    .sf-svc .facts dl{grid-template-columns:1fr 1fr}
+    .sf-svc .facts dl>div:nth-child(3){padding-left:0;border-left:0}
+    .sf-svc .facts dl>div:nth-child(n+3){border-top:1px solid var(--line)}
+    .sf-svc .guide-list{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .sf-svc{font-size:16px}
+    .sf-svc .wrap{padding:0 20px}
+    .sf-svc .hero{padding:104px 0 72px}
+    .sf-svc .hero-photo figcaption{position:relative;left:auto;bottom:auto;margin:-36px 14px 0;max-width:none}
+    .sf-svc .problem,.sf-svc .features,.sf-svc .monitor,.sf-svc .fit,.sf-svc .faq,.sf-svc .closing{padding:80px 0}
+    .sf-svc .guides{padding:0 0 80px}
+    .sf-svc .feat-list,.sf-svc .guide-list{grid-template-columns:1fr}
+    .sf-svc .triggers{padding:28px 22px 18px}
+    .sf-svc .facts dl{grid-template-columns:1fr}
+    .sf-svc .facts dl>div,.sf-svc .facts dl>div+div{padding:20px 0;border-left:0}
+    .sf-svc .facts dl>div+div{border-top:1px solid var(--line)}
+    .sf-svc .faq-a-inner{padding-right:0}
+  }
+  @media (prefers-reduced-motion:reduce){.sf-svc .faq-a{transition:none}}
+</style>
+
+<!--ai:header-->
+
+<div class="sf-svc" style="--svc:#1B3A6B">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Business insurance, compared across carriers</h1>
+      <p class="lede">Accredited Interchange shops your coverage across top-rated carriers and places the policy for you: general liability, workers’ comp, commercial auto, professional liability and more. Quotes are same-day on most standard policies.</p>
+      <div class="hero-actions">
+        <a href="/contact-us" class="btn btn-primary">Get an insurance quote</a>
+        <a href="#coverage" class="btn btn-plain">See coverage types</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/insurance-hero.jpg" alt="A tradesman in work overalls talks on the phone beside his white service van" width="1800" height="1201" style="object-position:38% 50%">
+      <figcaption><strong>Same-day quotes</strong>On most standard policies, with your options and pricing laid out before you commit.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section class="facts" aria-label="How we handle business insurance">
+  <div class="wrap">
+    <dl>
+      <div><dt>Multiple carriers</dt><dd>We compare, so you don’t have to.</dd></div>
+      <div><dt>Same-day quotes</dt><dd>On most standard policies.</dd></div>
+      <div><dt>Prior claims considered</dt><dd>Carriers that work with claims history.</dd></div>
+      <div><dt>One point of contact</dt><dd>Plus 24/7 U.S.-based support.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="problem">
+  <div class="wrap split">
+    <div>
+      <h2>The right policy depends on how your business actually works</h2>
+      <p>Two businesses in the same industry can need very different coverage. It depends on whether you have employees, whether anyone drives for work, what your client contracts require and what your landlord asks for.</p>
+      <p>We start with those questions, then quote the coverage that fits across several carriers, so you’re not buying a policy you don’t need or missing one you do.</p>
+      <p class="closer">You see your options side by side, with pricing, before you commit to anything.</p>
+    </div>
+    <div class="triggers">
+      <h3>Questions that shape your coverage</h3>
+      <ul>
+        <li>Do you have employees, full or part time?</li>
+        <li>Do you or your staff drive for work, in your own vehicles or company ones?</li>
+        <li>Do client contracts ask for a certificate of insurance?</li>
+        <li>Do clients rely on your advice, designs or professional work?</li>
+        <li>Do you lease space with insurance requirements in the lease?</li>
+        <li>Do you keep equipment, tools or inventory you’d need to replace?</li>
+        <li>Have you had claims in the past few years?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="features" id="coverage">
+  <div class="wrap">
+    <div class="features-head">
+      <h2>Business insurance coverage we place</h2>
+      <p>The policies small and midsize businesses ask us for most, quoted across carriers and placed for you.</p>
+    </div>
+    <div class="features-body">
+      <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/insurance-mechanic.jpg" alt="A smiling auto mechanic stands with his arms crossed in his repair shop" width="1400" height="933" loading="lazy" style="object-position:50% 40%">
+      <dl class="feat-list">
+        <div><dt>General liability</dt><dd>Covers third-party injury, property damage and advertising claims.</dd></div>
+        <div><dt>Workers’ compensation</dt><dd>Placed with carriers that know your industry.</dd></div>
+        <div><dt>Commercial auto</dt><dd>From one service van to a full fleet.</dd></div>
+        <div><dt>Professional liability</dt><dd>Errors and omissions coverage for consultants, contractors and other professionals.</dd></div>
+        <div><dt>Business owner’s policy</dt><dd>General liability and commercial property bundled into one policy.</dd></div>
+        <div><dt>Group benefits</dt><dd>Health, dental and vision plans for your employees.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="monitor">
+  <div class="wrap monitor-grid">
+    <img src="https://mylaunchpartner.github.io/accredited-interchange/assets/insurance-advisor.jpg" alt="A business owner in an apron reviews documents with an advisor in a café" width="1400" height="934" loading="lazy" style="object-position:72% 50%">
+    <div>
+      <h2>How quoting works</h2>
+      <p>One conversation, then options from several carriers. Most standard policies are quoted the same day.</p>
+      <ol class="steps">
+        <li><strong>Tell us about your business</strong>What you do, how many people work for you, and any coverage you have now.</li>
+        <li><strong>We shop it across carriers</strong>Including carriers that work with businesses that have had claims before.</li>
+        <li><strong>Compare and choose</strong>You see the options and pricing side by side. We place the policy you pick.</li>
+      </ol>
+      <a href="/contact-us" class="btn btn-gold">Get an insurance quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <h2>Business insurance questions</h2>
+      <p>Something else? <a href="/contact-us">Send us a message</a></p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How fast can I get a business insurance quote?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Quotes are same-day on most standard policies. More specialized coverage can take longer, and we’ll tell you upfront if it will.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I get insurance if I’ve had claims before?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">In most cases, yes. We work with a broad panel of carriers, including ones experienced with claims history, and we’ll be upfront about your options and pricing before you commit.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What’s the difference between general liability and professional liability?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">General liability covers injuries and property damage you cause to other people, plus advertising claims. Professional liability, also called errors and omissions, covers claims that your advice or professional work caused a client a financial loss. Many service businesses need both.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need workers’ compensation?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Most states, including Arizona, require it once you have employees. The rules differ by state and by type of worker, so we’ll confirm what applies to your business when we quote.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I have to use your other services to get insurance?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. Business insurance works on its own. If you also use our payment processing or payroll, you keep the same point of contact for all of it.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="guides">
+  <div class="wrap">
+    <h2>Business insurance guides</h2>
+    <ul class="guide-list">
+      <li><a href="/post/general-liability-vs-professional-liability">General liability vs. professional liability<small>What each policy covers, and when you need both.</small></a></li>
+      <li><a href="/post/business-owners-policy">What a business owner’s policy covers<small>How a BOP bundles liability and property coverage.</small></a></li>
+      <li><a href="/post/arizona-workers-compensation-basics">Arizona workers’ comp basics<small>Who needs it and how it works.</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap closing-grid">
+    <div>
+      <h2>Find out what your coverage should cost</h2>
+      <p>Tell us what your business does and what you carry now. We’ll compare carriers and show you your options, with no commitment.</p>
+    </div>
+    <div class="closing-actions">
+      <a href="/contact-us" class="btn btn-gold">Get an insurance quote</a>
+      <a href="tel:+16199956484" class="tel">(619) 995-6484</a>
+      <small>24/7 U.S.-based support</small>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!--ai:footer-->
+
+<script>
+window.addEventListener('load', function () {
+  // FAQ accordion
+  document.querySelectorAll('.sf-svc .faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', function () {
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.sf-svc .faq-item.open').forEach(function (o) {
+        if (o !== item) { o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); o.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      item.classList.toggle('open', !open);
+      q.setAttribute('aria-expanded', String(!open));
+      a.style.maxHeight = open ? null : a.scrollHeight + 'px';
+    });
+  });
+  // In-page links scroll the window (GHL wraps content in its own containers)
+  document.querySelectorAll('.sf-svc a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var el = document.getElementById(link.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 80), behavior: 'instant' });
+    });
+  });
+});
+</script>

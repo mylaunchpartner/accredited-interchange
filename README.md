@@ -75,6 +75,8 @@ Logos are in `assets/`. Add Samantha's headshot as `assets/samantha-martinez-acc
 
 Licensed from Envato: hero `assets/hero-merchant-register.jpg` ("Woman Calculates Finances in Stylish Clothing Store"). `merchant-counter-tap.jpg` and the three `ruo-*.jpg` photos are the same Envato photos used on starfipay.com.
 
+Payroll page (`/payroll-services`, `pages/payroll.html`): `payroll-hero.jpg` ("Smiling Colleagues Reviewing Laptop Data in Cafe"), `payroll-team.jpg` ("Smiling Teamwork in a Bright Workshop"), `payroll-owner.jpg` ("Smiling Restaurant Owner Works at Laptop"). Business insurance page (`/business-insurance`, `pages/insurance.html`): `insurance-hero.jpg` ("Man in Overalls on Phone by Delivery Van"), `insurance-mechanic.jpg` ("Smiling Mechanic Poses Confidently in Auto Repair Shop"), `insurance-advisor.jpg` ("Business Meeting in a Modern Cafe"). All licensed from Envato on Nov 19, 2026. Share images: `accredited-og-payroll.jpg`, `accredited-og-insurance.jpg`.
+
 ## Design
 
 Layout matches starfipay.com; styling keeps Accredited's own identity: Space Grotesk headings, Inter body, indigo `#4F46FF` for actions, deep indigo `#161335` for dark bands, green `#12B76A`/`#2FD08A` for payroll and savings. Avoid pill labels above headings, colored words inside headlines, glow gradients, scroll-in animations and graph-paper backgrounds.

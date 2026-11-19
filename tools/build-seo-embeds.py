@@ -33,6 +33,8 @@ PAGES = {
     'ownership': ('/ownership', 'Ownership'),
     'samantha-martinez': ('/samantha-martinez', 'Samantha Martinez'),
     'blog': ('/blog', 'Blog'),
+    'payroll': ('/payroll-services', 'Payroll services'),
+    'insurance': ('/business-insurance', 'Business insurance'),
 }
 
 KEEP = {'h1', 'h2', 'h3', 'h4', 'p', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'a', 'strong', 'em', 'b',
@@ -100,6 +102,10 @@ def services_schema(page, url):
                 ('Business insurance', 'General liability, workers’ compensation, commercial auto, professional liability and business owner’s policies.')]
     elif page == 'peptides':
         svcs = [('RUO peptide payment processing', 'Payment processing for Research Use Only peptide eCommerce merchants: individual underwriting, fraud prevention, chargeback management and Shopify-compatible processing.')]
+    elif page == 'payroll':
+        svcs = [('Payroll services', 'Automated, compliant payroll for small and midsize businesses: scheduled pay runs with no per-run fees, payroll tax filing in all 50 states, direct deposit, an employee portal, and W-2s and 1099s.')]
+    elif page == 'insurance':
+        svcs = [('Business insurance', 'Business insurance shopped across top-rated carriers and placed for you: general liability, workers’ compensation, commercial auto, professional liability, business owner’s policies and group benefits.')]
     else:
         return []
     return [{'@context': 'https://schema.org', '@type': 'Service', 'name': n, 'description': d,
