@@ -91,6 +91,6 @@
 .ai-shell .logo{gap:12px;text-decoration:none}
 .ai-shell .logo-mark{width:62px;flex-shrink:0;display:flex}
 .ai-shell .logo-mark svg{width:100%;height:auto;display:block}
-.ai-shell .logo-text{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:-.01em;color:var(--midnight);white-space:nowrap}
+.ai-shell .logo-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.035em;line-height:1;color:var(--midnight);white-space:nowrap}
 .ai-shell footer .logo-text{color:#fff}
-@media(max-width:560px){.ai-shell .logo-mark{width:54px}.ai-shell .logo-text{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:-.01em;color:var(--midnight);white-space:nowrap}}
+@media(max-width:560px){.ai-shell .logo-mark{width:54px}.ai-shell .logo-text{font-size:15.5px}}
